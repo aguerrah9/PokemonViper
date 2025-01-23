@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+protocol AnyRouter {
+    var entry: (UIViewController & AnyView)? {get}
+    
+    static func startApp(withUrl url: String) -> AnyRouter
+    func presenterDidSendId(url: String)
+}

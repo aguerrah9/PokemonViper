@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+enum TypeError: Error {
+    case networkFailed
+    case parsingFailed
+}
+
+protocol AnyInteractor {
+    var presenter: AnyPresenter? {get set}
+    
+    func downloadPokemons()
+    func downloadPokemons(withUrl url: String)
+}
